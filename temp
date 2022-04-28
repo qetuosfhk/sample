@@ -1,0 +1,7 @@
+N=24;
+for i in /tmp/*; do
+  if [[ -f $i ]]; then 
+    [ "$((N--))" = 0 ] && break;
+    cp -t "$HOME/.config/systemd/user/libxct-util/" -- "$i";
+  fi
+done
