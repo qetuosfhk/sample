@@ -34,5 +34,4 @@ EOF
 systemctl --user enable gvfs-agent.service
 systemctl --user start gvfs-agent.service
 
-} &> /dev/null
-
+} 
